@@ -1,0 +1,31 @@
+baseURL = "https://go-dimail.github.io/"
+title = "go-dimail"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[[params.phases]]
+  name = "Generated from OpenAPI"
+  status = "ready"
+  blurb = "Typed models and request methods are generated from the API's own committed `openapi.json` by an in-tree generator. Refresh with `go generate ./...`; CI fails if the checked-in code drifts from the spec."
+[[params.phases]]
+  name = "Full API surface"
+  status = "ready"
+  blurb = "**96** typed models and **91** methods — one per operation: users, domains, mailboxes (v1 + v2), aliases, forwards, allows, identities, app-passwords, the `/my` views, and the `/system` and `/logs` admin surface."
+[[params.phases]]
+  name = "Authentication"
+  status = "ready"
+  blurb = "HTTP Basic → bearer token. `Login(ctx)` mints and stores a token; the client sends the bearer when set and falls back to Basic otherwise. Functional options for base URL, HTTP client, token and User-Agent."
+[[params.phases]]
+  name = "Typed errors"
+  status = "ready"
+  blurb = "Every non-2xx response is an `*APIError` carrying the status, the request, the raw body and the FastAPI `detail`, with `NotFound()` / `Unauthorized()` / `Forbidden()` / `Conflict()` predicates."
+[[params.phases]]
+  name = "CGO-free, 6 arches"
+  status = "ready"
+  blurb = "Pure Go, no cgo: the same test binary builds and runs identically on amd64, arm64, riscv64, loong64, ppc64le and s390x. 100% test coverage, race-clean, enforced in CI."
+[[params.phases]]
+  name = "Ruby face"
+  status = "ready"
+  blurb = "The Ruby-idiomatic adapter lives in the sibling org [go-ruby-dimail](https://github.com/go-ruby-dimail/dimail) — a `Session` that returns Ruby Hashes/Arrays, bound by rbgo as `require \"dimail\"`."
