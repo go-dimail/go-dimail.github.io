@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{{/* Dark Reader repaints pages that already draw their own dark theme, as this one does: ask it to stand aside. */}}
+<meta name="darkreader-lock">
 <title>{{ .Site.Title }} — a pure-Go client for the Dimail API, generated from OpenAPI, no cgo</title>
 <meta name="description" content="go-dimail — a pure-Go (CGO-free) client for the Dimail API (La Suite numérique), generated from the API's OpenAPI document. 96 typed models, 91 methods, 100% coverage, 6 arches.">
 <style>
