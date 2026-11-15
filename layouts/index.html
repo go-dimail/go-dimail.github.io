@@ -41,11 +41,9 @@
   <div class="hero"><div class="wrap">
     <div>
       <h1 class="head">go-dimail</h1>
-      <p class="sub">A pure-Go client for the Dimail API — generated from the API's OpenAPI document, no cgo.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="/docs/">{{ partial "icons/book.html" . }}Documentation</a>
-        <a class="btn btn-ghost" href="https://github.com/go-dimail/dimail">{{ partial "icons/github.html" . }}GitHub</a>
-      </div>
+      <p class="sub">A {{ if partial "mantra-on.html" . }}Go{{ else }}pure-Go{{ end }} client for the Dimail API — generated from the API's OpenAPI document, {{ if not (partial "mantra-on.html" $) }}no cgo{{ end }}.</p>
+      {{/* [[params.cta]] in hugo.toml: the kit renders the row */}}
+      {{ partial "cta.html" . }}
       <div class="trust">{{ if not (partial "mantra-on.html" $) }}<span class="pill">pure Go · zero cgo</span>{{ end }}<span class="pill">generated from OpenAPI</span><span class="pill">96 typed models</span><span class="pill">91 methods</span><span class="pill">Basic → bearer auth</span><span class="pill">typed APIError</span><span class="pill">100% coverage</span><span class="pill">6 arches</span><span class="pill">go generate</span></div>
       <div class="legacy"><div class="badges">
       <a href="/docs/"><img alt="Documentation (MkDocs Material + mike)" src="https://img.shields.io/badge/docs-mkdocs--material-2563EB"></a>
